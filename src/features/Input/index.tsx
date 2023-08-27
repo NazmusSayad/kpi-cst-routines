@@ -1,3 +1,5 @@
+'use client'
+
 import { useEffect, useState } from 'react'
 import DayFrom from './DayFrom'
 import css from './index.module.scss'
@@ -16,13 +18,12 @@ const index = () => {
   const [imgUrl, setImgUrl] = useState('')
   const [modalName, setModalName] = useState('')
   const [data, setData] = useState<Partial<Data>>(() => {
-    const local = 'localStorage' in globalThis && localStorage.getItem('data')
+    const local = localStorage.getItem('data')
     return local ? JSON.parse(local) : {}
   })
 
   useEffect(() => {
-    'localStorage' in globalThis &&
-      localStorage.setItem('data', JSON.stringify(data))
+    localStorage.setItem('data', JSON.stringify(data))
   }, [data])
 
   function addSubject(name: string, data: any) {

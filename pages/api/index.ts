@@ -1,9 +1,9 @@
-import { Data } from '@/src/features/Input'
-import * as fs from 'fs'
 import puppeteer from 'puppeteer'
+import { Data } from '@/src/features/Input'
+import getTemplate from '@/src/utils/getTemplate'
 
 export default async function (req: Request, res: any) {
-  const template = fs.readFileSync('./template.html', 'utf-8')
+  const template = getTemplate()
   const html = template.replace(/<script>(.|\s)*<\/script>/, '').replace(
     '<!-- CONTENT -->',
     Object.entries(req.body as unknown as Data)
@@ -38,7 +38,7 @@ export default async function (req: Request, res: any) {
       .join('')
   )
 
-  const browser = await puppeteer.launch()
+  const browser = await puppeteer.launch({ headless: true })
   const page = await browser.newPage()
   await page.setViewport({ width: 1920, height: 1080 })
   await page.setContent(html)
