@@ -16,12 +16,13 @@ const index = () => {
   const [imgUrl, setImgUrl] = useState('')
   const [modalName, setModalName] = useState('')
   const [data, setData] = useState<Partial<Data>>(() => {
-    const local = localStorage.getItem('data')
+    const local = 'localStorage' in window && localStorage.getItem('data')
     return local ? JSON.parse(local) : {}
   })
 
   useEffect(() => {
-    localStorage.setItem('data', JSON.stringify(data))
+    'localStorage' in window &&
+      localStorage.setItem('data', JSON.stringify(data))
   }, [data])
 
   function addSubject(name: string, data: any) {
