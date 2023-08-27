@@ -40,7 +40,7 @@ export default async function (req: Request, res: any) {
       .join('')
   )
 
-  const browser = await puppeteer.launch({ headless: true })
+  const browser = await chromium.puppeteer.launch({ headless: true })
   const page = await browser.newPage()
   await page.setViewport({ width: 1920, height: 1080 })
   await page.setContent(html)
