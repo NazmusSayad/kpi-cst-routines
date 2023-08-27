@@ -18,13 +18,12 @@ const index = () => {
   const [imgUrl, setImgUrl] = useState('')
   const [modalName, setModalName] = useState('')
   const [data, setData] = useState<Partial<Data>>(() => {
-    const local = 'localStorage' in globalThis && localStorage.getItem('data')
+    const local = globalThis.localStorage?.getItem('data')
     return local ? JSON.parse(local) : {}
   })
 
   useEffect(() => {
-    'localStorage' in globalThis &&
-      localStorage.setItem('data', JSON.stringify(data))
+    globalThis.localStorage?.setItem('data', JSON.stringify(data))
   }, [data])
 
   function addSubject(name: string, data: any) {
@@ -68,7 +67,7 @@ const index = () => {
   }
 
   async function getPicture(data: Partial<Data>) {
-    const res = await fetch('/api', {
+    const res = await fetch('https://kpi-routine.onrender.com', {
       method: 'POST',
       body: JSON.stringify(data),
       headers: { 'content-type': 'application/json' },
