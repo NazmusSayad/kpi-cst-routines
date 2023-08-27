@@ -89,7 +89,7 @@ const Dialog = ({
     dialogRef.current.showModal()
   }, [open]) */
 
-  const handleCancel = (e) => {
+  const handleCancel = (e: any) => {
     e.preventDefault()
   }
 
