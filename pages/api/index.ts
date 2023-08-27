@@ -1,4 +1,6 @@
 import puppeteer from 'puppeteer'
+import chromium from 'chrome-aws-lambda'
+
 import { Data } from '@/src/features/Input'
 import getTemplate from '@/src/utils/getTemplate'
 
