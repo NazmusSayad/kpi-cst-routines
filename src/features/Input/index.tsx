@@ -16,12 +16,12 @@ const index = () => {
   const [imgUrl, setImgUrl] = useState('')
   const [modalName, setModalName] = useState('')
   const [data, setData] = useState<Partial<Data>>(() => {
-    const local = 'localStorage' in window && localStorage.getItem('data')
+    const local = 'localStorage' in globalThis && localStorage.getItem('data')
     return local ? JSON.parse(local) : {}
   })
 
   useEffect(() => {
-    'localStorage' in window &&
+    'localStorage' in globalThis &&
       localStorage.setItem('data', JSON.stringify(data))
   }, [data])
 
