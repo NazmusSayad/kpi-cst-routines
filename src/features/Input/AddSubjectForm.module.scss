@@ -1,0 +1,56 @@
+.dialog {
+  position: absolute;
+  inset: 2rem;
+  background-color: #eee;
+  border-radius: 0.5rem;
+}
+
+.backdrop {
+  background: #00000099;
+  backdrop-filter: blur(2px);
+}
+
+.root {
+}
+
+.wrapper {
+  padding: 2rem 3rem;
+}
+
+.header .wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 0;
+}
+
+.form {
+  input {
+    width: 100%;
+    padding: 0.4em 0.8em;
+    border-radius: 0.5rem;
+    border: 0;
+    margin-block: 0.25rem;
+    background: white;
+    outline: solid 0.25rem color-mix(in srgb, var(--clr-p) 100%, #00000000 100%);
+
+    &:focus {
+      outline-color: var(--clr-p);
+    }
+  }
+}
+
+.group {
+  margin-bottom: 1.5rem;
+
+  p {
+    text-transform: uppercase;
+    font-weight: 600;
+    font-size: 1.4rem;
+    color: #555;
+  }
+}
+
+.button {
+  margin: auto;
+}

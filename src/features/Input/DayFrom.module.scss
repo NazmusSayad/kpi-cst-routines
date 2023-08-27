@@ -1,0 +1,29 @@
+.dayForm {
+  text-align: center;
+
+  &:not(:last-child) {
+    margin-bottom: 3rem;
+  }
+}
+
+.table {
+  width: 100%;
+  max-width: 25rem;
+  margin: auto;
+  margin-bottom: 1rem;
+
+  &,
+  tr,
+  th,
+  td {
+    border: 0.1rem solid black;
+  }
+}
+
+.actions {
+  font-size: 1.4rem;
+  display: flex;
+  gap: 0.5rem;
+  width: fit-content;
+  margin: auto;
+}

@@ -1,0 +1,20 @@
+.listContainer {
+  padding-block: 2rem;
+}
+
+.buttons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+.preview {
+  margin: 1rem;
+  margin-top: 3rem;
+
+  img {
+    border: solid 0.1rem black;
+  }
+}
