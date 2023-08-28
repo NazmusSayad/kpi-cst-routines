@@ -13,7 +13,7 @@ export default async (req: any, res: any) => {
   const html = getHTML(req.body)
 
   for (let font of fonts) {
-    await chromium.font(font)
+    console.log(await chromium.font(font))
   }
 
   const browser = await puppeteer.launch({
