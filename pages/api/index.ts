@@ -11,6 +11,7 @@ const fonts = [
 
 export default async (req: any, res: any) => {
   const html = getHTML(req.body)
+  console.log(html)
 
   for (let font of fonts) {
     console.log(await chromium.font(font))
