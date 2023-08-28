@@ -67,7 +67,7 @@ const index = () => {
   }
 
   async function getPicture(data: Partial<Data>) {
-    const res = await fetch('https://kpi-routine.onrender.com', {
+    const res = await fetch('/api', {
       method: 'POST',
       body: JSON.stringify(data),
       headers: { 'content-type': 'application/json' },
