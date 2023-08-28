@@ -3,19 +3,8 @@ import chromium from '@sparticuz/chromium'
 import getHTML from '@/src/utils/getHTML'
 import { wait } from '@/src/utils/utils'
 
-const fonts = [
-  'https://fonts.gstatic.com/s/notosansbengali/v20/Cn-fJsCGWQxOjaGwMQ6fIiMywrNJIky6nvd8BjzVMvJx2mc4I3mYvNY.woff2',
-  'https://fonts.gstatic.com/s/notosansbengali/v20/Cn-fJsCGWQxOjaGwMQ6fIiMywrNJIky6nvd8BjzVMvJx2mc4I3mYvNY.woff2',
-  'https://fonts.gstatic.com/s/notosansbengali/v20/Cn-fJsCGWQxOjaGwMQ6fIiMywrNJIky6nvd8BjzVMvJx2mc4I3mYvNY.woff2',
-]
-
 export default async (req: any, res: any) => {
   const html = getHTML(req.body)
-  console.log(html)
-
-  for (let font of fonts) {
-    console.log(await chromium.font(font))
-  }
 
   const browser = await puppeteer.launch({
     args: chromium.args,
