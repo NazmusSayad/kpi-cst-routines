@@ -1,8 +1,8 @@
 import { Data } from '@/src/features/Input'
 import getTemplate from '@/src/utils/getTemplate'
 import chromium from 'chrome-aws-lambda'
-const puppeteer = chromium.puppeteer
-// import puppeteer from 'puppeteer'
+// const puppeteer = chromium.puppeteer
+import puppeteer from 'puppeteer'
 
 export default async (req: any, res: any) => {
   const template = getTemplate()
