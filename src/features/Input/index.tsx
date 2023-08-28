@@ -5,14 +5,7 @@ import DayFrom from './DayFrom'
 import css from './index.module.scss'
 import AddSubjectForm from './AddSubjectForm'
 import { Button } from '@/src/components/Button'
-
-const days = ['রবিবার', 'সোমবার', 'মঙ্গলবার', 'বুধবার', 'বৃহস্পতিবার'] as const
-export type Data = Record<(typeof days)[number], SubjectData[]>
-export type SubjectData = {
-  name: string
-  startTime: string
-  room: string
-}
+import { Data, SubjectData, days } from '@/src/config'
 
 const index = () => {
   const [imgUrl, setImgUrl] = useState('')

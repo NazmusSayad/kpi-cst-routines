@@ -1,4 +1,4 @@
-import { Data } from '../features/Input'
+import { Data } from '../config'
 
 export default function (data: Data) {
   const template = `<!DOCTYPE html>
@@ -129,7 +129,7 @@ export default function (data: Data) {
         subjects.length
           ? `
         <section>
-          <h3>${name||'Boom'}</h3>
+          <h3>${name || 'Boom'}</h3>
 
           <table>
             <tbody>

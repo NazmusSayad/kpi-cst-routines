@@ -1,6 +1,6 @@
 import { Button } from '@/src/components/Button'
-import { SubjectData } from '.'
 import css from './DayFrom.module.scss'
+import { SubjectData } from '@/src/config'
 
 const DayFrom = ({
   name,
