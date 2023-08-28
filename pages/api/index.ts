@@ -1,7 +1,7 @@
 import { Data } from '@/src/features/Input'
 import getTemplate from '@/src/utils/getTemplate'
-// @ts-ignore
-import PCR from 'puppeteer-chromium-resolver'
+import chromium from 'chrome-aws-lambda'
+import puppeteer from 'puppeteer-core'
 
 export default async (req: any, res: any) => {
   const template = getTemplate()
@@ -39,12 +39,19 @@ export default async (req: any, res: any) => {
       .join('')
   )
 
-  const stats = await PCR()
+  /*   const stats = await PCR()
   const browser = await stats.puppeteer.launch({
     headless: true,
     args: ['--no-sandbox', '--disable-gpu'],
     executablePath: stats.executablePath,
+  }) */
+
+  const browser = await puppeteer.launch({
+    executablePath: await chromium.executablePath,
+    args: chromium.args,
+    headless: true,
   })
+
   const page = await browser.newPage()
   await page.setViewport({ width: 1920, height: 1080 })
   await page.setContent(html)
