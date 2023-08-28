@@ -3,8 +3,8 @@ import chromium from '@sparticuz/chromium'
 import getHTML from '@/src/utils/getHTML'
 import { wait } from '@/src/utils/utils'
 
-chromium.setHeadlessMode = true
-chromium.setGraphicsMode = false
+// chromium.setHeadlessMode = true
+// chromium.setGraphicsMode = false
 
 export default async (req: any, res: any) => {
   const html = getHTML(req.body)
@@ -15,7 +15,7 @@ export default async (req: any, res: any) => {
   )
 
   const browser = await puppeteer.launch({
-    args: [...chromium.args, '--disable-web-security'],
+    // args: [...chromium.args, '--disable-web-security'],
     defaultViewport: chromium.defaultViewport,
     executablePath: await chromium.executablePath(),
     headless: true,
