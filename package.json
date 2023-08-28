@@ -17,8 +17,6 @@
     "css-reset-plus": "^1.0.4",
     "get-classnames": "^2.0.0",
     "next": "13.4.19",
-    "puppeteer": "latest",
-    "puppeteer-core": "^21.1.0",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "sass": "^1.66.1",
