@@ -15,7 +15,7 @@ export default async (req: any, res: any) => {
   )
 
   const browser = await puppeteer.launch({
-    args: chromium.args,
+    args: [...chromium.args, '--disable-web-security'],
     defaultViewport: chromium.defaultViewport,
     executablePath: await chromium.executablePath(),
     headless: true,
