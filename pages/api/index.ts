@@ -10,6 +10,10 @@ export default async (req: any, res: any) => {
   const html = getHTML(req.body)
   console.log(html)
 
+  await chromium.font(
+    'https://github.com/hmoazzem/bangla-fonts/raw/master/kalpurush%20ANSI.ttf'
+  )
+
   const browser = await puppeteer.launch({
     args: chromium.args,
     defaultViewport: chromium.defaultViewport,
