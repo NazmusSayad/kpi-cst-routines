@@ -48,7 +48,7 @@ export default async (req: any, res: any) => {
 
   const browser = await puppeteer.launch({
     executablePath: await chromium.executablePath,
-    args: chromium.args,
+    args: ['--no-sandbox', '--disable-setuid-sandbox'],
     headless: true,
   })
 
