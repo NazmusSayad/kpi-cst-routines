@@ -8,6 +8,7 @@ chromium.setGraphicsMode = false
 
 export default async (req: any, res: any) => {
   const html = getHTML(req.body)
+  console.log(html)
 
   const browser = await puppeteer.launch({
     args: chromium.args,
