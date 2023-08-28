@@ -129,7 +129,7 @@ export default function (data: Data) {
         subjects.length
           ? `
         <section>
-          <h3>${name}</h3>
+          <h3>${name||'Boom'}</h3>
 
           <table>
             <tbody>

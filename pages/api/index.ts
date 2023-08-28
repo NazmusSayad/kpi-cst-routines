@@ -1,6 +1,7 @@
 import puppeteer from 'puppeteer-core'
 import chromium from '@sparticuz/chromium'
 import getHTML from '@/src/utils/getHTML'
+import { wait } from '@/src/utils/utils'
 
 chromium.setHeadlessMode = true
 chromium.setGraphicsMode = false
@@ -18,6 +19,7 @@ export default async (req: any, res: any) => {
   const page = await browser.newPage()
   await page.setViewport({ width: 1920, height: 1080 })
   await page.setContent(html)
+  await wait()
 
   const element = await page.$('main')
   const output =
