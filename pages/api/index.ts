@@ -1,8 +1,11 @@
 import { Data } from '@/src/features/Input'
 import getTemplate from '@/src/utils/getTemplate'
-import chromium from 'chrome-aws-lambda'
-const puppeteer = chromium.puppeteer
-// import puppeteer from 'puppeteer'
+
+import puppeteer from 'puppeteer-core'
+import chromium from '@sparticuz/chromium'
+
+chromium.setHeadlessMode = true
+chromium.setGraphicsMode = false
 
 export default async (req: any, res: any) => {
   const template = getTemplate()
@@ -40,17 +43,10 @@ export default async (req: any, res: any) => {
       .join('')
   )
 
-  /*   const stats = await PCR()
-  const browser = await stats.puppeteer.launch({
-    headless: true,
-    args: ['--no-sandbox', '--disable-gpu'],
-    executablePath: stats.executablePath,
-  }) */
-
-  console.log(await chromium.executablePath)
   const browser = await puppeteer.launch({
-    executablePath: await chromium.executablePath,
-    args: ['--no-sandbox', '--disable-setuid-sandbox'],
+    args: chromium.args,
+    defaultViewport: chromium.defaultViewport,
+    executablePath: await chromium.executablePath(),
     headless: true,
   })
 
