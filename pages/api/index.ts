@@ -1,7 +1,7 @@
 import { Data } from '@/src/features/Input'
 import getTemplate from '@/src/utils/getTemplate'
 import chromium from 'chrome-aws-lambda'
-import puppeteer from 'puppeteer-core'
+import puppeteer from 'puppeteer'
 
 export default async (req: any, res: any) => {
   const template = getTemplate()
@@ -47,7 +47,7 @@ export default async (req: any, res: any) => {
   }) */
 
   const browser = await puppeteer.launch({
-    executablePath: await chromium.executablePath,
+    // executablePath: await chromium.executablePath,
     args: ['--no-sandbox', '--disable-setuid-sandbox'],
     headless: true,
   })
