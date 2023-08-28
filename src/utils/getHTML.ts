@@ -134,9 +134,9 @@ export default function (data: Data) {
           <table>
             <tbody>
               <tr>
-                <th>সময়</th>
-                <th>বিষয়</th>
-                <th>রুম</th>
+                <th>Start</th>
+                <th>Subject</th>
+                <th>Room no.</th>
               </tr>
               ${subjects
                 .map(
