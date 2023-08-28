@@ -1,5 +1,6 @@
 import { Data } from '@/src/features/Input'
 import getTemplate from '@/src/utils/getTemplate'
+// @ts-ignore
 import PCR from 'puppeteer-chromium-resolver'
 
 export default async (req: any, res: any) => {
