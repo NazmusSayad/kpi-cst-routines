@@ -3,19 +3,21 @@ import chromium from '@sparticuz/chromium'
 import getHTML from '@/src/utils/getHTML'
 import { wait } from '@/src/utils/utils'
 
-// chromium.setHeadlessMode = true
-// chromium.setGraphicsMode = false
+const fonts = [
+  'https://fonts.gstatic.com/s/notosansbengali/v20/Cn-fJsCGWQxOjaGwMQ6fIiMywrNJIky6nvd8BjzVMvJx2mc4I3mYvNY.woff2',
+  'https://fonts.gstatic.com/s/notosansbengali/v20/Cn-fJsCGWQxOjaGwMQ6fIiMywrNJIky6nvd8BjzVMvJx2mc4I3mYvNY.woff2',
+  'https://fonts.gstatic.com/s/notosansbengali/v20/Cn-fJsCGWQxOjaGwMQ6fIiMywrNJIky6nvd8BjzVMvJx2mc4I3mYvNY.woff2',
+]
 
 export default async (req: any, res: any) => {
   const html = getHTML(req.body)
-  console.log(html)
 
-  await chromium.font(
-    'https://github.com/hmoazzem/bangla-fonts/raw/master/kalpurush%20ANSI.ttf'
-  )
+  for (let font of fonts) {
+    await chromium.font(font)
+  }
 
   const browser = await puppeteer.launch({
-    args: [...chromium.args, '--disable-web-security'],
+    args: chromium.args,
     defaultViewport: chromium.defaultViewport,
     executablePath: await chromium.executablePath(),
     headless: true,
