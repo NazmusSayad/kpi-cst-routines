@@ -38,7 +38,7 @@ const AddSubjectForm = ({
 
       <form
         className={css.form}
-        onSubmit={(e) => (e.preventDefault(), handleForm(e))}
+        onSubmit={(e) => (e.preventDefault(), handleForm(e), close())}
       >
         <div className={css.wrapper}>
           <div className={css.group}>

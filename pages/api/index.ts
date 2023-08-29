@@ -3,10 +3,6 @@ import chromium from '@sparticuz/chromium'
 import getHTML from '@/src/utils/getHTML'
 
 export default async (req: any, res: any) => {
-  await chromium.font(
-    'https://raw.githack.com/googlei18n/noto-emoji/master/fonts/NotoColorEmoji.ttf'
-  )
-
   const browser = await puppeteer.launch({
     args: chromium.args,
     defaultViewport: chromium.defaultViewport,
