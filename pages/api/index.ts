@@ -50,7 +50,7 @@ const args = [
   // '--disable-web-security',
   '--no-sandbox',
   // '--no-zygote',
-  // "--headless='new'",
+  "--headless='new'",
 ]
 
 export default async (req: any, res: any) => {
