@@ -45,12 +45,12 @@ const args = [
   // '--use-gl=angle',
   // '--use-angle=swiftshader',
   // '--allow-running-insecure-content',
-  // '--disable-setuid-sandbox',
+  '--disable-setuid-sandbox',
   // '--disable-site-isolation-trials',
   // '--disable-web-security',
   '--no-sandbox',
   // '--no-zygote',
-  "--headless='new'",
+  // "--headless='new'",
 ]
 
 export default async (req: any, res: any) => {
