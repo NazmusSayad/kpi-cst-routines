@@ -136,7 +136,7 @@ export default function (data: Data) {
           <table>
             <tbody>
               <tr>
-                <th>Start</th>
+                <th>সময়</th>
                 <th>Subject</th>
                 <th>Room no.</th>
               </tr>
