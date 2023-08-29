@@ -1,4 +1,4 @@
-import { Data } from '../config'
+import { Data, days } from '../config'
 
 export default function (data: Data) {
   const template = `<!DOCTYPE html>
@@ -124,12 +124,14 @@ export default function (data: Data) {
 
   return template.replace(
     '<!-- CONTENT -->',
-    Object.entries(data)
-      .map(([name, subjects]) =>
-        subjects.length
-          ? `
+    days
+      .map((day) => {
+        const subjects = data[day]
+        if (!(subjects && subjects.length)) return ''
+
+        return `
         <section>
-          <h3>${name || 'Boom'}</h3>
+          <h3>${day}</h3>
 
           <table>
             <tbody>
@@ -151,8 +153,7 @@ export default function (data: Data) {
             </tbody>
           </table>
         </section>`
-          : ''
-      )
+      })
       .join('')
   )
 }
