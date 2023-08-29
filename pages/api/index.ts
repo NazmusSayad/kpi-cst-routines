@@ -35,7 +35,7 @@ const args = [
   // '--mute-audio',
   // '--no-default-browser-check',
   // '--no-pings',
-  // '--single-process',
+  '--single-process',
   // '--disable-features=Translate,BackForwardCache,AcceptCHFrame,MediaRouter,OptimizationHints,AudioServiceOutOfProcess,IsolateOrigins,site-per-process',
   // '--enable-features=NetworkServiceInProcess2,SharedArrayBuffer',
   // '--hide-scrollbars',
