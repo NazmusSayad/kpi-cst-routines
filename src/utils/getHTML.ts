@@ -47,7 +47,7 @@ export default function (data: Data) {
 
       h3 {
         font-size: 1.17rem;
-        margin-block: 0.5rem 0.4rem;
+        margin-block: 0.5rem 0.33rem;
       }
       section:first-child h3 {
         margin-top: 0.33rem;
