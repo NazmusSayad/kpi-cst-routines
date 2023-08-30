@@ -62,7 +62,9 @@ const AddSubjectForm = ({
             <input required type="text" name="room" placeholder="3005" />
           </div>
 
-          <Button className={css.button}>Save</Button>
+          <div>
+            <Button className={css.button}>Save</Button>
+          </div>
         </div>
       </form>
     </Dialog>

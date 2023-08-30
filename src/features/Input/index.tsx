@@ -6,6 +6,7 @@ import css from './index.module.scss'
 import AddSubjectForm from './AddSubjectForm'
 import { Button } from '@/src/components/Button'
 import { Data, SubjectData, days } from '@/src/config'
+import { download } from '@/src/utils/utils'
 
 const index = () => {
   const [imgUrl, setImgUrl] = useState('')
@@ -18,6 +19,23 @@ const index = () => {
   useEffect(() => {
     globalThis.localStorage?.setItem('data', JSON.stringify(data))
   }, [data])
+
+  function importData(file: File) {
+    const reader = new FileReader()
+    reader.onload = function (e: any) {
+      const content = e.target.result
+      const jsonData = JSON.parse(content)
+      setData(jsonData)
+    }
+    reader.readAsText(file)
+  }
+
+  function exportData() {
+    const dataStr =
+      'data:text/json;charset=utf-8,' +
+      encodeURIComponent(localStorage.getItem('data')!)
+    download(dataStr, 'data.json')
+  }
 
   function addSubject(name: string, data: any) {
     setData((prev) => {
@@ -53,10 +71,7 @@ const index = () => {
     const img = imgUrl || (await getPicture(data))
     if (!img) return
     setImgUrl(img || '')
-    const a = document.createElement('a')
-    a.href = img
-    a.download = 'routine.png'
-    a.click()
+    download(img, 'routine.png')
   }
 
   async function getPicture(data: Partial<Data>) {
@@ -90,6 +105,25 @@ const index = () => {
       <div className={css.buttons}>
         <Button onClick={() => setPicture(data)}>Show Preview</Button>
         <Button onClick={async () => downloadPicture()}>Download</Button>
+      </div>
+      <div className={css.buttons}>
+        <Button
+          onClick={(e) =>
+            (e.currentTarget as HTMLElement).querySelector('input')!.click()
+          }
+        >
+          <input
+            hidden
+            type="file"
+            onChange={(e) =>
+              e.target.files &&
+              e.target.files[0] &&
+              importData(e.target.files[0])
+            }
+          />
+          Import
+        </Button>
+        <Button onClick={() => exportData()}>Export</Button>
       </div>
 
       {imgUrl && (
