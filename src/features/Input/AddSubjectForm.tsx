@@ -30,8 +30,9 @@ const AddSubjectForm = ({
         <div className={css.wrapper}>
           <h2>{name}</h2>
 
-          <button type="button" onClick={close}>
-            Close me
+          <button type="button" onClick={close} className={css.closeBtn}>
+            <div className={css.horizontal}></div>
+            <div className={css.vertical}></div>
           </button>
         </div>
       </header>

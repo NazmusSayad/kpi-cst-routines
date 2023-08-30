@@ -34,7 +34,12 @@ const DayFrom = ({
               <td>{subject.name}</td>
               <td>{subject.room}</td>
               <td>
-                <button onClick={() => deleteSubject(name, ind)}>Delete</button>
+                <Button
+                  className={css.red}
+                  onClick={() => deleteSubject(name, ind)}
+                >
+                  Delete
+                </Button>
               </td>
             </tr>
           ))}

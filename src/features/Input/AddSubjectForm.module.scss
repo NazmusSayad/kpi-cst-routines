@@ -24,6 +24,37 @@
   padding-bottom: 0;
 }
 
+.closeBtn {
+  border: 0;
+  position: relative;
+  width: 2.75rem;
+  height: 2.75rem;
+  display: grid;
+  place-content: center;
+  transform: rotate(45deg);
+
+  .horizontal,
+  .vertical {
+    --stroke: 0.3rem;
+    position: absolute;
+    background-color: lightcoral;
+  }
+
+  .horizontal {
+    width: 100%;
+    height: var(--stroke);
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  .vertical {
+    width: var(--stroke);
+    height: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
+
 .form {
   input {
     width: 100%;
