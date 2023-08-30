@@ -1,9 +1,6 @@
 import { Data, days } from '../config'
 
 export default function (data: Data) {
-  return `<main><h1>বাংলাটেক্সট</h1></main>`
-  
-  
   const template = `<!DOCTYPE html>
   <html lang="en">
     <head>
@@ -139,9 +136,9 @@ export default function (data: Data) {
           <table>
             <tbody>
               <tr>
-                <th>Start</th>
-                <th>Subject</th>
-                <th>Room no.</th>
+                <th>সময়</th>
+                <th>বিষয়</th>
+                <th>রুম</th>
               </tr>
               ${subjects
                 .map(

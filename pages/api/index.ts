@@ -4,7 +4,7 @@ import getHTML from '@/src/utils/getHTML'
 
 export default async (req: any, res: any) => {
   await chromium.font(
-    'https://www.omicronlab.com/download/fonts/SolaimanLipi_20-04-07.ttf'
+    'https://www.omicronlab.com/download/fonts/Siyamrupali.ttf'
   )
 
   const browser = await puppeteer.launch({

@@ -1,9 +1,9 @@
 export const days = [
-  'Sunday',
-  'Monday',
-  'Thursday',
-  'Wednesday',
-  'Tuesday',
+  'রবিবার',
+  'সোমবার',
+  'মঙ্গলবার',
+  'বুধবার',
+  'বৃহস্পতিবার',
 ] as const
 
 export type Data = Record<(typeof days)[number], SubjectData[]>
