@@ -1,6 +1,8 @@
 import { Button } from '@/src/components/Button'
 import css from './DayFrom.module.scss'
 import { SubjectData } from '@/src/config'
+import Trash from '@/src/icons/Trash'
+import Copy from '@/src/icons/Copy'
 
 const DayFrom = ({
   name,
@@ -8,12 +10,14 @@ const DayFrom = ({
   setModal,
   deleteSubject,
   getPicture,
+  addSubject,
 }: {
   name: string
   subjects: SubjectData[]
   deleteSubject: Function
   setModal: Function
   getPicture: Function
+  addSubject: Function
 }) => {
   return (
     <div className={css.dayForm}>
@@ -33,12 +37,15 @@ const DayFrom = ({
               <td>{subject.startTime}</td>
               <td>{subject.name}</td>
               <td>{subject.room}</td>
-              <td>
+              <td className={css.buttons}>
+                <Button onClick={() => addSubject(name, subject)}>
+                  <Copy />
+                </Button>
                 <Button
                   className={css.red}
                   onClick={() => deleteSubject(name, ind)}
                 >
-                  Delete
+                  <Trash />
                 </Button>
               </td>
             </tr>

@@ -45,7 +45,7 @@ const index = () => {
       ] as SubjectData[]
 
       function customSort(timeStr: string) {
-        var [hours, minutes] = timeStr.split(':').map(Number)
+        const [hours, minutes] = timeStr.split(':').map(Number)
         return hours * 60 + minutes
       }
 
@@ -95,6 +95,7 @@ const index = () => {
             setModal={setModalName}
             subjects={data[day] || []}
             deleteSubject={deleteSubject}
+            addSubject={addSubject}
             getPicture={() =>
               data[day]?.length && setPicture({ [day]: data[day] })
             }
