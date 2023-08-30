@@ -1,13 +1,8 @@
 import puppeteer from 'puppeteer-core'
 import chromium from '@sparticuz/chromium'
 import getHTML from '@/src/utils/getHTML'
-import { fonts } from '@/src/config'
 
 export default async (req: any, res: any) => {
-  for (let font of fonts) {
-    // await chromium.font(font)
-  }
-
   const browser = await puppeteer.launch({
     args: chromium.args,
     defaultViewport: chromium.defaultViewport,
