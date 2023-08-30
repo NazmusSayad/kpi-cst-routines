@@ -20,7 +20,12 @@ export default async (req: any, res: any) => {
 
   const page = await browser.newPage()
   await page.setViewport({ width: 1920, height: 1080 })
-  await page.setContent(getHTML(req.body || {}))
+
+  const html = req.body
+    ? getHTML(req.body)
+    : '<main><h1>Nothing to show</h1></main>'
+  await page.setContent(html)
+  console.log(html)
 
   const element = await page.$('main')
   const output =
