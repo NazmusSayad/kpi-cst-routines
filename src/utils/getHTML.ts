@@ -13,7 +13,7 @@ export default function (data: Data) {
       @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Bengali:wght@400;600&display=swap');
 
       html {
-        font-size: 550%;
+        font-size: 575%;
       }
 
       body {
@@ -75,7 +75,7 @@ export default function (data: Data) {
       tr td:nth-child(1),
       tr th:nth-child(3),
       tr td:nth-child(3) {
-        width: 6rem;
+        width: 5rem;
       }
 
       th {
