@@ -49,6 +49,9 @@ export default function (data: Data) {
         font-size: 1.17rem;
         margin-block: 0.5rem 0.4rem;
       }
+      section:first-child h3 {
+        margin-top: 0.33rem;
+      }
 
       table {
         width: 100%;
