@@ -3,10 +3,17 @@ import chromium from '@sparticuz/chromium'
 import getHTML from '@/src/utils/getHTML'
 
 export default async (req: any, res: any) => {
+  await chromium.font(
+    'https://www.omicronlab.com/download/fonts/SolaimanLipi_20-04-07.ttf'
+  )
+
   const browser = await puppeteer.launch({
     args: chromium.args,
     defaultViewport: chromium.defaultViewport,
-    executablePath: await chromium.executablePath(),
+    executablePath:
+      process.env.NODE_ENV === 'development'
+        ? 'C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe'
+        : await chromium.executablePath(),
     headless: true,
   })
 

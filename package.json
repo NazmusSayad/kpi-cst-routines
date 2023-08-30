@@ -15,12 +15,14 @@
     "@types/react": "18.2.21",
     "@types/react-dom": "18.2.7",
     "css-reset-plus": "^1.0.4",
+    "file-loader": "^6.2.0",
     "get-classnames": "^2.0.0",
     "next": "13.4.19",
     "puppeteer-core": "10.1.0",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "sass": "^1.66.1",
-    "typescript": "5.2.2"
+    "typescript": "5.2.2",
+    "url-loader": "^4.1.1"
   }
 }

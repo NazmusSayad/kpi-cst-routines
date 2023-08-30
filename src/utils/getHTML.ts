@@ -1,6 +1,9 @@
 import { Data, days } from '../config'
 
 export default function (data: Data) {
+  return `<main><h1>বাংলাটেক্সট</h1></main>`
+  
+  
   const template = `<!DOCTYPE html>
   <html lang="en">
     <head>
