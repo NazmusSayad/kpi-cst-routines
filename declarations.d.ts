@@ -1,3 +1,3 @@
-declare module '*.ttf' {
+declare module '*.html' {
   export default string
 }
