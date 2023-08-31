@@ -20,7 +20,6 @@ export default async (req: any, res: any) => {
     ? getHTML(req.body)
     : '<main><h1>Nothing to show</h1></main>'
   await page.setContent(html)
-  console.log(html)
 
   const element = await page.$('main')
   const output =
