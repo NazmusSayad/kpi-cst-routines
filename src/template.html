@@ -10,7 +10,7 @@
       @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Bengali:wght@400;600&display=swap');
 
       html {
-        font-size: 650%;
+        font-size: 545%;
       }
 
       body {
@@ -85,22 +85,6 @@
         border: solid 0.01rem var(--clr-base);
       }
 
-      td,
-      th {
-        padding: 0.25em;
-      }
-
-      tr th:nth-child(1),
-      tr td:nth-child(1),
-      tr th:nth-child(3),
-      tr td:nth-child(3) {
-        width: 4.25rem;
-      }
-
-      th {
-        font-weight: 600;
-      }
-
       tr:first-child {
         background-color: var(--clr-base);
       }
@@ -117,9 +101,25 @@
         color: black;
       }
 
+      td,
+      th {
+        padding: 0.25em;
+      }
+
+      tr th:nth-child(1),
+      tr td:nth-child(1),
+      tr th:nth-child(3),
+      tr td:nth-child(3) {
+        width: 4.25rem;
+      }
+
       tr td:first-child {
-        font-family: 'Roboto';
+        font-family: 'Roboto' sans-serif;
         font-weight: 500;
+      }
+
+      th {
+        font-weight: 600;
       }
 
       section:nth-child(1) {
