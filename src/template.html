@@ -39,6 +39,16 @@
       .footer-text {
         margin-top: 0.25em;
         font-size: 0.75rem;
+        display: flex;
+        align-items: center;
+        margin-inline: auto;
+        width: fit-content;
+        gap: 0.2em;
+      }
+
+      .footer-text svg {
+        height: 1em;
+        width: 1em;
       }
 
       section {
@@ -52,11 +62,6 @@
       }
       section:last-child {
         border-bottom: none;
-      }
-
-      h3,
-      th {
-        font-family: 'Noto Sans Bengali', sans-serif;
       }
 
       h3 {
@@ -312,7 +317,11 @@
       </div>
 
       <div class="footer-text">
-        <span>★</span>
+        <span
+          ><?xml version="1.0" standalone="no"?>
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 260 245">
+            <path d="m56,237 74-228 74,228L10,96h240" /></svg
+        ></span>
         <span>সবাই যথা সময়ে উপস্থিত হবেন!</span>
       </div>
     </main>
